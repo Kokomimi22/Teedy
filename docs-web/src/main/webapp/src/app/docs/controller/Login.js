@@ -6,6 +6,9 @@
 angular.module('docs').controller('Login', function(Restangular, $scope, $rootScope, $state, $stateParams, $dialog, User, $translate, $uibModal) {
   $scope.codeRequired = false;
 
+  $scope.app = {
+    guest_login: true
+  };
   // Get the app configuration
   Restangular.one('app').get().then(function(data) {
     $rootScope.app = data;
